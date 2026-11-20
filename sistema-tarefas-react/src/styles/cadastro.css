@@ -1,0 +1,247 @@
+.cadastro-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* APRESENTAÇÃO */
+
+.cadastro-apresentacao {
+  background:
+    radial-gradient(circle at 20% 20%, #26366b 0%, transparent 40%),
+    linear-gradient(145deg, #10172d, #0a0e1c);
+
+  padding: 45px 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cadastro-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.cadastro-logo-icon {
+  width: 43px;
+  height: 43px;
+  background: linear-gradient(135deg, #5578ff, #895cff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.cadastro-texto {
+  max-width: 520px;
+}
+
+.cadastro-etiqueta {
+  color: #849dff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.cadastro-texto h1 {
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.15;
+  margin: 25px 0;
+}
+
+.cadastro-texto h1 span {
+  color: #8296ff;
+}
+
+.cadastro-texto p {
+  color: #a5aec5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.cadastro-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin-top: 35px;
+  color: #c3cbea;
+  font-size: 14px;
+}
+
+.cadastro-beneficios div {
+  color: #91a5ff;
+}
+
+.cadastro-rodape {
+  color: #737e99;
+  font-size: 12px;
+}
+
+/* FORMULÁRIO */
+
+.cadastro-formulario-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  background: #0b0f1a;
+}
+
+.cadastro-formulario {
+  width: 100%;
+  max-width: 410px;
+}
+
+.cadastro-titulo {
+  margin-bottom: 30px;
+}
+
+.cadastro-titulo > span {
+  color: #8296ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.cadastro-titulo h2 {
+  font-size: 30px;
+  margin: 13px 0 9px;
+}
+
+.cadastro-titulo p {
+  color: #8993aa;
+  font-size: 14px;
+}
+
+.cadastro-formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro-formulario form > label {
+  font-size: 13px;
+  color: #dce1f0;
+  margin-bottom: 9px;
+}
+
+.campo-cadastro {
+  height: 50px;
+  border: 1px solid #283149;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: #8998bc;
+  transition: 0.2s;
+}
+
+.campo-cadastro:focus-within {
+  border-color: #7188ff;
+  box-shadow: 0 0 0 3px #7188ff18;
+}
+
+.campo-cadastro input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+}
+
+.campo-cadastro input::placeholder {
+  color: #68738c;
+}
+
+.cadastro-mostrar-senha {
+  background: none;
+  border: none;
+  color: #8998bc;
+  display: flex;
+}
+
+.botao-cadastro {
+  height: 53px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #5578ff, #805bff);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.botao-cadastro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px #5578ff35;
+}
+
+.login-link {
+  margin-top: 25px;
+  text-align: center;
+  color: #929bb0;
+  font-size: 13px;
+}
+
+.login-link a {
+  color: #91a5ff;
+  font-weight: 700;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+  .cadastro-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cadastro-apresentacao {
+    display: none;
+  }
+
+  .cadastro-formulario-area {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .cadastro-formulario-area {
+    padding: 25px;
+  }
+
+  .cadastro-titulo h2 {
+    font-size: 26px;
+  }
+}
+.mensagem-erro {
+  background: #ff45451a;
+  border: 1px solid #ff454550;
+  color: #ff7777;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.mensagem-sucesso {
+  background: #20c77a1a;
+  border: 1px solid #20c77a50;
+  color: #48d99a;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.botao-cadastro:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

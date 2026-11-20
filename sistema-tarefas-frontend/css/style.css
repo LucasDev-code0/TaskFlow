@@ -1,0 +1,955 @@
+/* =========================================
+CONFIGURAÇÕES GERAIS
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+--background: #080b12;
+--sidebar: #0d111c;
+--surface: #121827;
+--surface-light: #192235;
+--border: rgba(255, 255, 255, 0.08);
+
+--text-primary: #f5f7ff;
+--text-secondary: #929bb0;
+
+--blue: #1677ff;
+--green: #08d69a;
+--orange: #ff9d2e;
+--purple: #9848ff;
+--red: #ff465e;
+
+--radius: 16px;
+
+}
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Inter', sans-serif;
+background: var(--background);
+color: var(--text-primary);
+min-height: 100vh;
+}
+
+button,
+input {
+font: inherit;
+}
+
+button {
+cursor: pointer;
+border: none;
+}
+
+/* =========================================
+2. ESTRUTURA PRINCIPAL
+========================================= */
+
+.app-container {
+display: flex;
+min-height: 100vh;
+}
+
+/* =========================================
+3. MENU LATERAL
+========================================= */
+
+.sidebar {
+width: 270px;
+min-height: 100vh;
+background: linear-gradient(180deg, #101522, #0b0f18);
+border-right: 1px solid var(--border);
+
+padding: 28px 20px;
+
+display: flex;
+flex-direction: column;
+
+position: fixed;
+left: 0;
+top: 0;
+bottom: 0;
+z-index: 10;
+
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 14px;
+margin-bottom: 55px;
+}
+
+.brand > i {
+width: 48px;
+height: 48px;
+color: var(--blue);
+stroke-width: 2.5;
+}
+
+.brand h2 {
+font-size: 19px;
+font-weight: 800;
+}
+
+.brand span {
+display: block;
+color: var(--text-secondary);
+font-size: 10px;
+margin-top: 5px;
+}
+
+.menu {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.menu-item {
+display: flex;
+align-items: center;
+gap: 15px;
+
+padding: 16px 15px;
+
+border-radius: 12px;
+
+color: #d6dbea;
+text-decoration: none;
+
+font-size: 14px;
+font-weight: 500;
+
+transition: 0.3s;
+
+}
+
+.menu-item i {
+width: 21px;
+height: 21px;
+}
+
+.menu-item:hover {
+background: rgba(22, 119, 255, 0.12);
+color: white;
+}
+
+.menu-item.active {
+background: linear-gradient(100deg, #1677ff, #124a9d);
+color: white;
+box-shadow: 0 8px 25px rgba(22, 119, 255, 0.2);
+}
+
+/* =========================================
+4. CARTÃO LATERAL
+========================================= */
+
+.sidebar-card {
+margin-top: auto;
+margin-bottom: 35px;
+
+padding: 25px 18px;
+
+border-radius: 16px;
+
+text-align: center;
+
+background:
+    radial-gradient(circle at top, rgba(22, 119, 255, 0.22), transparent 65%),
+    linear-gradient(145deg, #151e37, #111426);
+
+border: 1px solid rgba(72, 110, 255, 0.2);
+
+}
+
+.rocket {
+font-size: 43px;
+margin-bottom: 15px;
+}
+
+.sidebar-card h3 {
+font-size: 14px;
+margin-bottom: 12px;
+}
+
+.sidebar-card p {
+color: var(--text-secondary);
+font-size: 12px;
+line-height: 1.6;
+}
+
+/* =========================================
+5. PERFIL DO USUÁRIO
+========================================= */
+
+.user-profile {
+display: flex;
+align-items: center;
+gap: 12px;
+
+padding: 20px 5px 0;
+
+border-top: 1px solid var(--border);
+
+}
+
+.avatar {
+width: 42px;
+height: 42px;
+
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: linear-gradient(135deg, #1677ff, #793dff);
+
+font-weight: 700;
+font-size: 18px;
+
+}
+
+.user-profile strong {
+display: block;
+font-size: 13px;
+}
+
+.user-profile span {
+display: block;
+margin-top: 5px;
+color: var(--green);
+font-size: 11px;
+}
+
+/* =========================================
+6. CONTEÚDO PRINCIPAL
+========================================= */
+
+.main-content {
+width: calc(100% - 270px);
+margin-left: 270px;
+
+padding: 35px 32px;
+
+max-width: 1800px;
+
+}
+
+/* =========================================
+7. CABEÇALHO
+========================================= */
+
+.topbar {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-bottom: 35px;
+
+}
+
+.topbar h1 {
+font-size: 29px;
+font-weight: 800;
+margin-bottom: 8px;
+}
+
+.topbar p {
+color: var(--text-secondary);
+font-size: 14px;
+}
+
+.topbar-actions {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.current-date {
+color: #d9dfed;
+background: var(--surface);
+border: 1px solid var(--border);
+
+padding: 13px 18px;
+
+border-radius: 10px;
+font-size: 12px;
+
+}
+
+.icon-button {
+width: 43px;
+height: 43px;
+
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: white;
+background: var(--surface);
+border: 1px solid var(--border);
+
+transition: 0.3s;
+
+}
+
+.icon-button:hover {
+background: var(--surface-light);
+color: var(--blue);
+}
+
+/* =========================================
+8. INDICADORES
+========================================= */
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 18px;
+
+margin-bottom: 22px;
+
+}
+
+.stat-card {
+min-height: 120px;
+
+border-radius: var(--radius);
+border: 1px solid var(--border);
+
+padding: 25px;
+
+display: flex;
+align-items: center;
+gap: 20px;
+
+overflow: hidden;
+position: relative;
+
+transition: 0.3s;
+
+}
+
+.stat-card:hover {
+transform: translateY(-4px);
+}
+
+.stat-card > i {
+width: 43px;
+height: 43px;
+stroke-width: 2.2;
+}
+
+.stat-card h2 {
+font-size: 29px;
+font-weight: 800;
+margin-bottom: 6px;
+}
+
+.stat-card p {
+color: #d0d6e5;
+font-size: 13px;
+}
+
+.stat-card.blue {
+background: linear-gradient(130deg, #142744, #101a2b);
+}
+
+.stat-card.blue > i {
+color: var(--blue);
+}
+
+.stat-card.green {
+background: linear-gradient(130deg, #10352f, #101f25);
+}
+
+.stat-card.green > i {
+color: var(--green);
+}
+
+.stat-card.orange {
+background: linear-gradient(130deg, #38291b, #211b19);
+}
+
+.stat-card.orange > i {
+color: var(--orange);
+}
+
+.stat-card.purple {
+background: linear-gradient(130deg, #2c1d47, #191528);
+}
+
+.stat-card.purple > i {
+color: var(--purple);
+}
+
+/* =========================================
+9. GRÁFICOS
+========================================= */
+
+.charts-grid {
+display: grid;
+grid-template-columns: 1fr 1.3fr 1fr;
+gap: 18px;
+
+margin-bottom: 22px;
+
+}
+
+.chart-card {
+min-height: 250px;
+
+padding: 24px;
+
+background: linear-gradient(145deg, #151b2a, #101522);
+
+border: 1px solid var(--border);
+border-radius: var(--radius);
+
+transition: 0.3s;
+
+}
+
+.chart-card:hover {
+border-color: rgba(22, 119, 255, 0.3);
+}
+
+.chart-card h3 {
+font-size: 15px;
+font-weight: 700;
+margin-bottom: 25px;
+}
+
+#graficoProgresso,
+#graficoComparativo,
+#graficoProdutividade {
+min-height: 150px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: var(--text-secondary);
+font-size: 12px;
+
+}
+
+/* =========================================
+10. ÁREA DE TAREFAS
+========================================= */
+
+.tasks-section {
+padding: 24px;
+
+background: linear-gradient(145deg, #141a29, #101522);
+
+border: 1px solid var(--border);
+border-radius: var(--radius);
+
+}
+
+.tasks-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+margin-bottom: 22px;
+
+}
+
+.tasks-header h2 {
+display: flex;
+align-items: center;
+gap: 12px;
+
+font-size: 21px;
+
+}
+
+.tasks-header h2 i {
+color: var(--blue);
+width: 25px;
+}
+
+/* =========================================
+11. BOTÕES
+========================================= */
+
+.primary-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 9px;
+
+padding: 13px 20px;
+
+color: white;
+
+background: linear-gradient(100deg, #1677ff, #0754ca);
+
+border-radius: 10px;
+
+font-size: 13px;
+font-weight: 600;
+
+box-shadow: 0 5px 20px rgba(22, 119, 255, 0.18);
+
+transition: 0.3s;
+
+}
+
+.primary-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(22, 119, 255, 0.35);
+}
+
+.primary-button i {
+width: 17px;
+height: 17px;
+}
+
+/* =========================================
+12. FILTROS
+========================================= */
+
+.task-filters {
+display: flex;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.filter-button {
+padding: 10px 18px;
+
+border-radius: 30px;
+
+background: #1a2030;
+
+border: 1px solid var(--border);
+
+color: #aeb8cb;
+
+font-size: 12px;
+transition: 0.3s;
+
+}
+
+.filter-button:hover {
+background: #24314b;
+color: white;
+}
+
+.filter-button.active {
+background: var(--blue);
+color: white;
+border-color: var(--blue);
+}
+
+/* =========================================
+13. FORMULÁRIO
+========================================= */
+
+.task-form {
+display: grid;
+grid-template-columns: 1fr 1.3fr auto;
+gap: 12px;
+
+margin-bottom: 20px;
+
+}
+
+.task-form input {
+width: 100%;
+
+padding: 14px 16px;
+
+background: #1a2030;
+
+border: 1px solid var(--border);
+border-radius: 10px;
+
+color: white;
+
+outline: none;
+font-size: 13px;
+
+transition: 0.3s;
+
+}
+
+.task-form input::placeholder {
+color: #8791a6;
+}
+
+.task-form input:focus {
+border-color: var(--blue);
+box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.1);
+}
+
+/* =========================================
+14. LISTA DE TAREFAS
+========================================= */
+
+.task-list {
+display: flex;
+flex-direction: column;
+}
+
+.loading-message {
+padding: 25px;
+text-align: center;
+color: var(--text-secondary);
+}
+
+.task-item {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 15px;
+
+padding: 17px 8px;
+
+border-bottom: 1px solid var(--border);
+
+transition: 0.3s;
+
+}
+
+.task-item:hover {
+background: rgba(255, 255, 255, 0.025);
+}
+
+.task-info {
+display: flex;
+align-items: center;
+gap: 15px;
+
+flex: 1;
+min-width: 0;
+
+}
+
+.task-check {
+width: 27px;
+height: 27px;
+
+flex-shrink: 0;
+
+border: 2px solid #8793ac;
+border-radius: 50%;
+
+background: transparent;
+color: white;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.task-check.completed {
+background: var(--blue);
+border-color: var(--blue);
+}
+
+.task-check i {
+width: 16px;
+height: 16px;
+}
+
+.task-text {
+min-width: 0;
+}
+
+.task-text h3 {
+font-size: 14px;
+margin-bottom: 5px;
+overflow-wrap: anywhere;
+}
+
+.task-text p {
+font-size: 12px;
+color: var(--text-secondary);
+overflow-wrap: anywhere;
+}
+
+.task-item.completed .task-text h3 {
+text-decoration: line-through;
+color: #7f899d;
+}
+
+.task-actions {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+.task-actions button {
+width: 36px;
+height: 36px;
+
+border-radius: 50%;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+background: #20283a;
+color: #dce4f5;
+
+transition: 0.3s;
+
+}
+
+.task-actions button:hover {
+background: #293650;
+color: var(--blue);
+}
+
+.task-actions .delete-button:hover {
+background: rgba(255, 70, 94, 0.15);
+color: var(--red);
+}
+
+.task-actions i {
+width: 17px;
+height: 17px;
+}
+
+/* =========================================
+15. MENSAGENS VAZIAS E ERROS
+========================================= */
+
+.empty-message,
+.error-message {
+padding: 35px 15px;
+text-align: center;
+color: var(--text-secondary);
+font-size: 13px;
+}
+
+.error-message {
+color: var(--red);
+}
+
+/* =========================================
+16. RESPONSIVIDADE - TABLETS
+========================================= */
+
+@media (max-width: 1100px) {
+
+.sidebar {
+    width: 230px;
+}
+
+.main-content {
+    width: calc(100% - 230px);
+    margin-left: 230px;
+    padding: 25px 20px;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.charts-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.charts-grid .chart-card:last-child {
+    grid-column: span 2;
+}
+
+}
+
+/* =========================================
+17. RESPONSIVIDADE - CELULARES
+========================================= */
+
+@media (max-width: 700px) {
+
+.sidebar {
+    width: 100%;
+    min-height: auto;
+    height: auto;
+
+    position: relative;
+
+    padding: 18px;
+}
+
+.app-container {
+    display: block;
+}
+
+.brand {
+    margin-bottom: 18px;
+}
+
+.menu {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 5px;
+}
+
+.menu-item {
+    flex-shrink: 0;
+    padding: 11px;
+    font-size: 11px;
+}
+
+.menu-item span {
+    display: none;
+}
+
+.menu-item i {
+    width: 20px;
+}
+
+.sidebar-card,
+.user-profile {
+    display: none;
+}
+
+.main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 23px 15px;
+}
+
+.topbar {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.topbar h1 {
+    font-size: 24px;
+}
+
+.topbar-actions {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.stat-card {
+    padding: 15px;
+    min-height: 105px;
+    gap: 10px;
+}
+
+.stat-card > i {
+    width: 30px;
+    height: 30px;
+}
+
+.stat-card h2 {
+    font-size: 23px;
+}
+
+.stat-card p {
+    font-size: 10px;
+}
+
+.charts-grid {
+    grid-template-columns: 1fr;
+}
+
+.charts-grid .chart-card:last-child {
+    grid-column: auto;
+}
+
+.tasks-section {
+    padding: 16px;
+}
+
+.tasks-header {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.tasks-header h2 {
+    font-size: 18px;
+}
+
+.task-filters {
+    overflow-x: auto;
+}
+
+.filter-button {
+    flex-shrink: 0;
+}
+
+.task-form {
+    grid-template-columns: 1fr;
+}
+
+.task-form .primary-button {
+    width: 100%;
+}
+
+.task-item {
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.task-actions button {
+    width: 31px;
+    height: 31px;
+}
+
+}
+/* STATUS DAS TAREFAS */
+
+.task-status {
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.task-status.pendente {
+    color: #c18aff;
+    background: rgba(152, 72, 255, 0.18);
+}
+
+.task-status.concluida {
+    color: #08d69a;
+    background: rgba(8, 214, 154, 0.15);
+}
+
+.task-date {
+    color: var(--text-secondary);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .task-status,
+    .task-date {
+        display: none;
+    }
+}

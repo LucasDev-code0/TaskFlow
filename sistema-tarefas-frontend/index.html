@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestão de Tarefas | Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <i data-lucide="circle-check-big"></i>
+
+                <div>
+                    <h2>TaskFlow</h2>
+                    <span>Organize • Planeje • Conquiste</span>
+                </div>
+            </div>
+
+            <nav class="menu">
+
+                <a href="#" class="menu-item active">
+                    <i data-lucide="house"></i>
+                    <span>Visão Geral</span>
+                </a>
+
+                <a href="#tarefas" class="menu-item">
+                    <i data-lucide="square-check"></i>
+                    <span>Minhas Tarefas</span>
+                </a>
+
+                <a href="#calendario" class="menu-item">
+                    <i data-lucide="calendar-days"></i>
+                    <span>Calendário</span>
+                </a>
+
+                <a href="#relatorios" class="menu-item">
+                    <i data-lucide="chart-no-axes-column-increasing"></i>
+                    <span>Relatórios</span>
+                </a>
+
+                <a href="#configuracoes" class="menu-item">
+                    <i data-lucide="settings"></i>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-card">
+                <div class="rocket">🚀</div>
+
+                <h3>Você está indo muito bem!</h3>
+
+                <p>Continue focado nos seus objetivos.</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">L</div>
+
+                <div>
+                    <strong>Lucas Dev</strong>
+                    <span>● Online</span>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- CABEÇALHO -->
+            <header class="topbar">
+
+                <div>
+                    <h1>Olá! 👋</h1>
+                    <p>Aqui está um resumo das suas tarefas.</p>
+                </div>
+
+                <div class="topbar-actions">
+
+                    <span class="current-date" id="currentDate"></span>
+
+                    <button class="icon-button" aria-label="Notificações">
+                        <i data-lucide="bell"></i>
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- INDICADORES -->
+            <section class="stats-grid">
+
+                <article class="stat-card blue">
+                    <i data-lucide="clipboard-list"></i>
+
+                    <div>
+                        <h2 id="totalTarefas">0</h2>
+                        <p>Total de tarefas</p>
+                    </div>
+                </article>
+
+                <article class="stat-card green">
+                    <i data-lucide="circle-check"></i>
+
+                    <div>
+                        <h2 id="tarefasConcluidas">0</h2>
+                        <p>Concluídas</p>
+                    </div>
+                </article>
+
+                <article class="stat-card orange">
+                    <i data-lucide="clock"></i>
+
+                    <div>
+                        <h2 id="tarefasPendentes">0</h2>
+                        <p>Pendentes</p>
+                    </div>
+                </article>
+
+                <article class="stat-card purple">
+                    <i data-lucide="trending-up"></i>
+
+                    <div>
+                        <h2 id="produtividade">0%</h2>
+                        <p>Produtividade</p>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- ÁREA DOS GRÁFICOS -->
+            <section class="charts-grid" id="relatorios">
+
+                <article class="chart-card">
+                    <h3>Seu Progresso</h3>
+
+                    <div id="graficoProgresso">
+                        Gráfico de progresso
+                    </div>
+                </article>
+
+                <article class="chart-card">
+                    <h3>Comparativo de Tarefas</h3>
+
+                    <div id="graficoComparativo">
+                        Gráfico comparativo
+                    </div>
+                </article>
+
+                <article class="chart-card">
+                    <h3>Sua Produtividade</h3>
+
+                    <div id="graficoProdutividade">
+                        Gráfico de produtividade
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- GERENCIAMENTO DE TAREFAS -->
+            <section class="tasks-section" id="tarefas">
+
+                <div class="tasks-header">
+
+                    <h2>
+                        <i data-lucide="list-checks"></i>
+                        Minhas Tarefas
+                    </h2>
+
+                    <button class="primary-button" id="btnNovaTarefa">
+                        <i data-lucide="plus"></i>
+                        Nova Tarefa
+                    </button>
+
+                </div>
+
+
+                <!-- FILTROS -->
+                <div class="task-filters">
+
+                    <button class="filter-button active" data-filtro="todas">
+                        Todas
+                    </button>
+
+                    <button class="filter-button" data-filtro="pendentes">
+                        Pendentes
+                    </button>
+
+                    <button class="filter-button" data-filtro="concluidas">
+                        Concluídas
+                    </button>
+
+                </div>
+
+
+                <!-- FORMULÁRIO -->
+                <form id="formTarefa" class="task-form">
+
+                    <input
+                        type="text"
+                        id="tituloTarefa"
+                        placeholder="Digite o título da tarefa..."
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="descricaoTarefa"
+                        placeholder="Digite uma descrição..."
+                    >
+
+                    <button type="submit" class="primary-button">
+                        <i data-lucide="send"></i>
+                        Adicionar
+                    </button>
+
+                </form>
+
+
+                <!-- LISTA DE TAREFAS -->
+                <div class="task-list" id="listaTarefas">
+
+                    <p class="loading-message">
+                        Carregando tarefas...
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

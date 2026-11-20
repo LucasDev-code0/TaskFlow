@@ -1,0 +1,265 @@
+.login-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* LADO DE APRESENTAÇÃO */
+
+.login-apresentacao {
+  background:
+    radial-gradient(circle at 20% 20%, #26366b 0%, transparent 40%),
+    linear-gradient(145deg, #10172d, #0a0e1c);
+
+  padding: 45px 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  width: 43px;
+  height: 43px;
+  background: linear-gradient(135deg, #5578ff, #895cff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+.apresentacao-conteudo {
+  max-width: 520px;
+}
+
+.etiqueta {
+  color: #849dff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.apresentacao-conteudo h1 {
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.15;
+  margin: 25px 0;
+}
+
+.apresentacao-conteudo h1 span {
+  color: #8296ff;
+}
+
+.apresentacao-conteudo p {
+  color: #a5aec5;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 440px;
+}
+
+.apresentacao-indicadores {
+  display: flex;
+  gap: 55px;
+  margin-top: 55px;
+}
+
+.apresentacao-indicadores div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.apresentacao-indicadores strong {
+  font-size: 23px;
+  color: #91a5ff;
+}
+
+.apresentacao-indicadores span {
+  color: #929bb1;
+  font-size: 12px;
+}
+
+.texto-rodape {
+  color: #737e99;
+  font-size: 12px;
+}
+
+/* LADO DO FORMULÁRIO */
+
+.login-formulario-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #0b0f1a;
+}
+
+.login-formulario {
+  width: 100%;
+  max-width: 410px;
+}
+
+.formulario-titulo {
+  margin-bottom: 38px;
+}
+
+.formulario-titulo > span {
+  color: #8296ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.formulario-titulo h2 {
+  font-size: 32px;
+  margin: 14px 0 10px;
+}
+
+.formulario-titulo p {
+  color: #8993aa;
+  font-size: 14px;
+}
+
+.login-formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-formulario form > label {
+  font-size: 13px;
+  color: #dce1f0;
+  margin-bottom: 10px;
+}
+
+.campo-login {
+  height: 55px;
+  border: 1px solid #283149;
+  background: #111827;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+  margin-bottom: 25px;
+  color: #8998bc;
+  transition: 0.2s;
+}
+
+.campo-login:focus-within {
+  border-color: #7188ff;
+  box-shadow: 0 0 0 3px #7188ff18;
+}
+
+.campo-login input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+}
+
+.campo-login input::placeholder {
+  color: #68738c;
+}
+
+.mostrar-senha {
+  background: none;
+  border: none;
+  color: #8998bc;
+  display: flex;
+}
+
+.opcoes-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: -5px 0 28px;
+  font-size: 12px;
+  color: #9ba5bc;
+}
+
+.lembrar-login {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.opcoes-login a {
+  color: #91a5ff;
+}
+
+.botao-login {
+  height: 54px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #5578ff, #805bff);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.botao-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px #5578ff35;
+}
+
+.cadastro-link {
+  margin-top: 30px;
+  text-align: center;
+  color: #929bb0;
+  font-size: 13px;
+}
+
+.cadastro-link a {
+  color: #91a5ff;
+  font-weight: 700;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-apresentacao {
+    display: none;
+  }
+
+  .login-formulario-area {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-formulario-area {
+    padding: 25px;
+  }
+
+  .formulario-titulo h2 {
+    font-size: 27px;
+  }
+}
+.mensagem-erro {
+  background: #ff45451a;
+  border: 1px solid #ff454550;
+  color: #ff7777;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.botao-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
