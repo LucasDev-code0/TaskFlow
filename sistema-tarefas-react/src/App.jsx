@@ -8,7 +8,7 @@ import {
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard";
-
+import Configuracoes from "./pages/Configuracoes";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -23,9 +23,8 @@ function App() {
           <Route path="/cadastro" element={<Cadastro />} />
 
           {/* Rotas protegidas */}
-          <Route element={<ProtectedRoute />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/configuracoes" element={<Configuracoes />} />
 
           {/* Qualquer rota inexistente volta ao login */}
           <Route path="*" element={<Navigate to="/" replace />} />

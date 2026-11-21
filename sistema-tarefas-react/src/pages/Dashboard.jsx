@@ -406,10 +406,14 @@ const notificacoes = tarefas.filter((tarefa) => {
 
         <div className="sidebar-bottom">
 
-          <a href="#" className="menu-item">
+          <button
+            type="button"
+            className="menu-item"
+            onClick={() => navigate("/configuracoes")}
+          >
             <Settings size={19} />
             Configurações
-          </a>
+          </button>
 
           <button
             className="menu-item botao-sair"
