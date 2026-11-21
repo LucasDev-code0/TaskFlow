@@ -1969,3 +1969,135 @@ scroll-behavior: smooth;
 scroll-margin-top: 25px;
 
 }
+/* =========================================
+   AJUSTE DE LAYOUT DA SIDEBAR - TASKFLOW
+========================================= */
+
+/* Estrutura da sidebar */
+.sidebar {
+  width: 250px;
+  min-width: 250px;
+  height: 100vh;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 18px;
+}
+
+/* Logo */
+.sidebar .logo {
+  margin-bottom: 30px;
+}
+
+/* Título do menu */
+.sidebar .menu-label {
+  margin-bottom: 10px;
+}
+
+/* Links principais */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Área inferior */
+.sidebar .sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Botões da área inferior */
+.sidebar .sidebar-bottom .menu-item {
+  width: 100%;
+}
+
+/* Botão sair */
+.sidebar .botao-sair {
+  margin-top: 0;
+}
+
+/* Perfil do usuário */
+.sidebar .profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 14px;
+  padding: 16px 5px 0;
+
+  border-top: 1px solid #1e293b;
+}
+
+/* Foto do perfil */
+.sidebar .profile-avatar {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+
+  overflow: hidden;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Informações do usuário */
+.sidebar .profile strong,
+.sidebar .profile span {
+  display: block;
+}
+
+.sidebar .profile strong {
+  font-size: 13px;
+}
+
+.sidebar .profile span {
+  color: #64748b;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: auto;
+    position: relative;
+    padding: 15px;
+  }
+
+  .sidebar .sidebar-bottom {
+    display: none;
+  }
+
+  .sidebar .menu-label {
+    display: none;
+  }
+
+  .sidebar .profile {
+    display: none;
+  }
+}
