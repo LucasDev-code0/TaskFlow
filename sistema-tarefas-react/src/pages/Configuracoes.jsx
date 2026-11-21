@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../services/supabase";
+import "../styles/configuracoes.css";
 import {
   User,
   Lock,
