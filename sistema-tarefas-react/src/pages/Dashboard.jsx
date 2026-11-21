@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 
 import { supabase } from "../services/supabase";
 
+
 import {
   listarTarefas,
   cadastrarTarefa,
@@ -51,6 +52,19 @@ function Dashboard() {
   const [salvando, setSalvando] = useState(false);
 
   const [tarefaEditando, setTarefaEditando] = useState(null);
+  const [usuario, setUsuario] = useState(null);
+
+  useEffect(() => {
+  async function carregarUsuario() {
+    const { data, error } = await supabase.auth.getUser();
+
+    if (!error && data.user) {
+      setUsuario(data.user);
+    }
+  }
+
+  carregarUsuario();
+}, []);
 
   // IDENTIFICAR SITUAÇÃO DO PRAZO
   function obterSituacaoPrazo(tarefa) {
@@ -424,13 +438,24 @@ const notificacoes = tarefas.filter((tarefa) => {
           </button>
 
           <div className="profile">
-            <div className="profile-avatar">L</div>
+  <div className="profile-avatar">
+    {usuario?.user_metadata?.avatar_url ? (
+      <img
+        src={usuario.user_metadata.avatar_url}
+        alt="Foto de perfil"
+      />
+    ) : (
+      usuario?.user_metadata?.nome?.charAt(0)?.toUpperCase() || "U"
+    )}
+  </div>
 
-            <div>
-              <strong>Lucas Dev</strong>
-              <span>Administrador</span>
-            </div>
-          </div>
+  <div>
+    <strong>
+      {usuario?.user_metadata?.nome || "Usuário"}
+    </strong>
+    <span>Minha conta</span>
+  </div>
+</div>
 
         </div>
 
