@@ -1,11 +1,11 @@
-/* CONFIGURAÇÕES TASKFLOW */
+/* CONFIGURAÇÕES TASKFLOW - DARK THEME */
 
 .settings-container {
   width: 100%;
   min-height: 100vh;
   padding: 35px;
-  background: #f5f7fb;
-  color: #1e293b;
+  background: #0f172a;
+  color: #f8fafc;
 }
 
 .settings-header {
@@ -16,21 +16,22 @@
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 8px;
+  color: #f8fafc;
 }
 
 .settings-header p {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 14px;
 }
 
 .settings-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #172033;
+  border: 1px solid #263449;
   border-radius: 14px;
   padding: 25px;
   margin-bottom: 22px;
   max-width: 850px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .settings-card h2 {
@@ -39,11 +40,11 @@
   gap: 10px;
   font-size: 18px;
   margin-bottom: 22px;
-  color: #1e293b;
+  color: #f8fafc;
 }
 
 .settings-card h2 svg {
-  color: #2563eb;
+  color: #60a5fa;
 }
 
 .profile-settings {
@@ -57,14 +58,14 @@
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  background: #eff6ff;
-  color: #2563eb;
+  background: #1e3a5f;
+  color: #60a5fa;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
-  border: 3px solid #dbeafe;
+  border: 3px solid #2563eb;
 }
 
 .settings-avatar img {
@@ -78,17 +79,17 @@
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #475569;
+  color: #cbd5e1;
 }
 
 .settings-card input:not([type="checkbox"]),
 .settings-card select {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #dbe2ea;
+  border: 1px solid #334155;
   border-radius: 8px;
-  background: #ffffff;
-  color: #1e293b;
+  background: #0f172a;
+  color: #f8fafc;
   font-size: 14px;
   outline: none;
   margin-bottom: 18px;
@@ -97,12 +98,13 @@
 
 .settings-card input:focus,
 .settings-card select:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .settings-card input:disabled {
-  background: #f1f5f9;
+  background: #1e293b;
+  color: #94a3b8;
   cursor: not-allowed;
 }
 
@@ -124,7 +126,7 @@
 }
 
 .settings-card p {
-  color: #64748b;
+  color: #94a3b8;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -132,7 +134,7 @@
 .settings-card input[type="checkbox"] {
   width: 17px;
   height: 17px;
-  accent-color: #2563eb;
+  accent-color: #3b82f6;
   cursor: pointer;
   margin-right: 8px;
 }
