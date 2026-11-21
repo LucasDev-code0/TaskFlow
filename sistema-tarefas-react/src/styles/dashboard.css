@@ -46,14 +46,25 @@
   gap: 9px;
 }
 
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
 .menu-item {
   display: flex;
   align-items: center;
   gap: 13px;
   padding: 13px;
+  background: transparent;
+  border: none;
   border-radius: 9px;
   color: #94a3b8;
+  font-family: inherit;
   font-size: 14px;
+  text-align: left;
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -61,6 +72,14 @@
 .menu-item.active {
   background: #1b2b50;
   color: #7c9aff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-bottom .menu-item {
+  width: 100%;
 }
 
 .sidebar-bottom {
@@ -326,16 +345,10 @@
 }
 /* BOTÃO SAIR DA CONTA */
 
+/* BOTÃO SAIR DA CONTA */
+
 .botao-sair {
-  width: 100%;
-  background: transparent;
-  border: none;
-  text-align: left;
-  font-size: 14px;
-  font-family: inherit;
-  cursor: pointer;
   margin-top: 10px;
-  transition: 0.2s;
 }
 
 .botao-sair:hover {
