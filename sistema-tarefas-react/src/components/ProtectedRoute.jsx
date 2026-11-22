@@ -1,7 +1,7 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-function ProtectedRoute() {
+function ProtectedRoute({ children }) {
   const { usuario, carregando } = useAuth();
 
   // Aguarda a verificação da sessão.
@@ -14,8 +14,8 @@ function ProtectedRoute() {
     return <Navigate to="/" replace />;
   }
 
-  // Se estiver autenticado, permite acessar a página.
-  return <Outlet />;
+  // Se estiver autenticado, renderiza a página.
+  return children;
 }
 
 export default ProtectedRoute;
