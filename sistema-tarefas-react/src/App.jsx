@@ -9,6 +9,10 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard";
 import Configuracoes from "./pages/Configuracoes";
+
+import RecuperarSenha from "./pages/RecuperarSenha";
+import RedefinirSenha from "./pages/RedefinirSenha";
+
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -16,20 +20,42 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+
         <Routes>
 
           {/* Rotas públicas */}
           <Route path="/" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
 
-          {/* Rotas protegidas */}
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/configuracoes" element={<Configuracoes />} />
+          <Route
+            path="/recuperar-senha"
+            element={<RecuperarSenha />}
+          />
 
-          {/* Qualquer rota inexistente volta ao login */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route
+            path="/redefinir-senha"
+            element={<RedefinirSenha />}
+          />
+
+          {/* Rotas protegidas */}
+          <Route
+            path="/dashboard"
+            element={<ProtectedRoute><Dashboard /></ProtectedRoute>}
+          />
+
+          <Route
+            path="/configuracoes"
+            element={<ProtectedRoute><Configuracoes /></ProtectedRoute>}
+          />
+
+          {/* Rota inexistente */}
+          <Route
+            path="*"
+            element={<Navigate to="/" replace />}
+          />
 
         </Routes>
+
       </BrowserRouter>
     </AuthProvider>
   );

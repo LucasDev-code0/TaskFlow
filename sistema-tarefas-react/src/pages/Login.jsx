@@ -24,7 +24,6 @@ function Login() {
 
   async function fazerLogin(event) {
     event.preventDefault();
-
     setErro("");
 
     try {
@@ -35,9 +34,7 @@ function Login() {
         password: senha
       });
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       if (data.user) {
         navigate("/dashboard");
@@ -182,12 +179,9 @@ function Login() {
                 Lembrar de mim
               </label>
 
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
-              >
+              <Link to="/recuperar-senha">
                 Esqueceu a senha?
-              </a>
+              </Link>
 
             </div>
 
