@@ -1718,172 +1718,6 @@ grid-template-columns: repeat(2, minmax(0, 1fr));
 
 
 
-/* CELULARES */
-
-@media (max-width: 768px) {
-
-.dashboard-container {
-
-display: flex;
-
-flex-direction: column;
-
-}
-
-
-
-.sidebar {
-
-width: 100%;
-
-height: auto;
-
-position: relative;
-
-padding: 15px;
-
-}
-
-
-
-.sidebar nav {
-
-display: flex;
-
-flex-wrap: wrap;
-
-gap: 8px;
-
-}
-
-
-
-.menu-label,
-
-.sidebar-bottom .menu-item,
-
-.profile {
-
-display: none;
-
-}
-
-
-
-.sidebar .menu-item {
-
-padding: 10px;
-
-font-size: 12px;
-
-}
-
-
-
-.dashboard-main {
-
-width: 100%;
-
-padding: 18px;
-
-}
-
-
-
-.dashboard-header {
-
-flex-direction: column;
-
-align-items: flex-start;
-
-gap: 18px;
-
-}
-
-
-
-.new-task-button {
-
-width: 100%;
-
-justify-content: center;
-
-}
-
-
-
-.stats-grid {
-
-grid-template-columns: 1fr;
-
-}
-
-
-
-.task-filters,
-
-.deadline-filters {
-
-display: flex;
-
-flex-wrap: wrap;
-
-gap: 8px;
-
-}
-
-
-
-.task-sorting {
-
-flex-wrap: wrap;
-
-}
-
-
-
-.task-search input {
-
-width: 100%;
-
-}
-
-
-
-.content-card {
-
-padding: 15px;
-
-overflow-x: auto;
-
-}
-
-
-
-.section-heading {
-
-flex-wrap: wrap;
-
-gap: 12px;
-
-}
-
-
-
-.modal-content {
-
-width: calc(100% - 30px);
-
-max-height: 90vh;
-
-overflow-y: auto;
-
-}
-
-}
-
-
-
 /* CELULARES PEQUENOS */
 
 @media (max-width: 480px) {
@@ -2074,12 +1908,17 @@ scroll-margin-top: 25px;
   font-size: 11px;
   margin-top: 4px;
 }
-
 /* =========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE E CELULARES
 ========================================= */
 
 @media (max-width: 768px) {
+
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .sidebar {
     width: 100%;
     min-width: 0;
@@ -2089,15 +1928,87 @@ scroll-margin-top: 25px;
     padding: 15px;
   }
 
-  .sidebar .sidebar-bottom {
-    display: none;
-  }
-
   .sidebar .menu-label {
     display: none;
   }
 
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sidebar .menu-item {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .sidebar .sidebar-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .sidebar .sidebar-bottom .menu-item {
+    display: flex;
+    align-items: center;
+    width: auto;
+  }
+
   .sidebar .profile {
     display: none;
+  }
+
+  .dashboard-main {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .new-task-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-filters,
+  .deadline-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .task-sorting {
+    flex-wrap: wrap;
+  }
+
+  .task-search input {
+    width: 100%;
+  }
+
+  .content-card {
+    padding: 15px;
+    overflow-x: auto;
+  }
+
+  .section-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .modal-content {
+    width: calc(100% - 30px);
+    max-height: 90vh;
+    overflow-y: auto;
   }
 }
