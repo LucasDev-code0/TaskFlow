@@ -18,6 +18,7 @@ function ProductivityCharts({ tarefas }) {
   const concluidas = tarefas.filter(
     tarefa => tarefa.concluida
   ).length;
+  console.log("DADOS RECEBIDOS PELO GRÁFICO:", tarefas);
 
   const pendentes = tarefas.length - concluidas;
 
