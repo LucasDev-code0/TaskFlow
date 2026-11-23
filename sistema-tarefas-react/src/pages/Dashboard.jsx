@@ -169,8 +169,9 @@ function Dashboard() {
       const resultado = await listarTarefas();
 
       console.log("TAREFAS RECEBIDAS:", resultado);
+
       setTarefas(resultado);
-      
+
 
     } catch (error) {
       console.error("Erro ao carregar tarefas:", error);
@@ -337,6 +338,15 @@ const produtividadePeriodo = totalPeriodo > 0
   const produtividade = totalTarefas > 0
     ? Math.round((tarefasConcluidas / totalTarefas) * 100)
     : 0;
+
+    console.log("DIAGNÓSTICO DA PRODUTIVIDADE:", {
+  totalTarefas,
+  tarefasConcluidas,
+  produtividade,
+  totalPeriodo,
+  concluidasPeriodo,
+  produtividadePeriodo
+});
 
   const tarefasAtrasadas = tarefas.filter(
     tarefa => obterSituacaoPrazo(tarefa) === "atrasada"
