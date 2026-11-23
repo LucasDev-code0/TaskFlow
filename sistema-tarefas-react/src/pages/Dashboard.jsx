@@ -475,13 +475,6 @@ return (
           <p>Acompanhe tarefas que precisam da sua atenção.</p>
         </div>
 
-        <span className="notification-count">
-          {notificacoes.length} avisos
-        </span>
-      </div>
-
-      <div className="notifications-list">
-
         {notificacoes.length === 0 ? (
 
           <div className="notification-empty">
