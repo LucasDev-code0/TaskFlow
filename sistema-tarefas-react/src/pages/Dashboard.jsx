@@ -339,6 +339,11 @@ const produtividadePeriodo = totalPeriodo > 0
     ? Math.round((tarefasConcluidas / totalTarefas) * 100)
     : 0;
 
+    console.log("VALORES FINAIS DOS CARDS:", {
+  produtividade,
+  produtividadePeriodo
+});
+
     console.log("DIAGNÓSTICO DA PRODUTIVIDADE:", {
   totalTarefas,
   tarefasConcluidas,
