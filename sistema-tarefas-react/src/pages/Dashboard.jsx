@@ -168,7 +168,9 @@ function Dashboard() {
 
       const resultado = await listarTarefas();
 
+      console.log("TAREFAS RECEBIDAS:", resultado);
       setTarefas(resultado);
+      
 
     } catch (error) {
       console.error("Erro ao carregar tarefas:", error);
