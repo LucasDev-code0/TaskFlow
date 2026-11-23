@@ -302,6 +302,9 @@ tarefa => obterSituacaoPrazo(tarefa) === "atrasada"
 
 // NOTIFICAÇÕES INTELIGENTES
 const notificacoes = tarefas.filter((tarefa) => {
+console.log("TOTAL DE TAREFAS:", tarefas.length);
+console.log("NOTIFICAÇÕES:", notificacoes.length);
+console.log("LISTA DE NOTIFICAÇÕES:", notificacoes);
 const situacao = obterSituacaoPrazo(tarefa);
 
 if (
