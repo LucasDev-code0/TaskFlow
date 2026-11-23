@@ -49,7 +49,7 @@ function ProductivityCharts({ tarefas }) {
         </div>
 
         <div className="productivity-percentage">
-          <strong>{percentual}%</strong>
+          <strong>{percentual}% (teste)</strong>
           <span>Concluído</span>
         </div>
       </div>
