@@ -302,39 +302,31 @@ tarefa => obterSituacaoPrazo(tarefa) === "atrasada"
 
 // NOTIFICAÇÕES INTELIGENTES
 const notificacoes = tarefas.filter((tarefa) => {
-console.log("TOTAL DE TAREFAS:", tarefas.length);
-console.log("NOTIFICAÇÕES:", notificacoes.length);
-console.log("LISTA DE NOTIFICAÇÕES:", notificacoes);
-const situacao = obterSituacaoPrazo(tarefa);
+  const situacao = obterSituacaoPrazo(tarefa);
 
-if (
-  situacao === "atrasada" ||
-  situacao === "hoje"
-) {
-  return true;
-}
+  if (situacao === "atrasada" || situacao === "hoje") {
+    return true;
+  }
 
-if (situacao === "futura") {
-  const hoje = new Date();
-  hoje.setHours(0, 0, 0, 0);
+  if (situacao === "futura") {
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
 
-  const [ano, mes, dia] = tarefa.data_vencimento
-    .split("-")
-    .map(Number);
+    const [ano, mes, dia] = tarefa.data_vencimento
+      .split("-")
+      .map(Number);
 
-  const vencimento = new Date(ano, mes - 1, dia);
+    const vencimento = new Date(ano, mes - 1, dia);
 
-  const diferenca = Math.ceil(
-    (vencimento - hoje) / (1000 * 60 * 60 * 24)
-  );
+    const diferenca =
+      (vencimento.getTime() - hoje.getTime()) /
+      (1000 * 60 * 60 * 24);
 
-  return diferenca <= 3;
-}
+    return diferenca >= 0 && diferenca <= 3;
+  }
 
-return false;
-
+  return false;
 });
-
 // SAIR DA CONTA
 async function sairDaConta() {
 const { error } = await supabase.auth.signOut();
