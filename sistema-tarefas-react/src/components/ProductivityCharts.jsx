@@ -26,6 +26,13 @@ function ProductivityCharts({ tarefas }) {
     ? Math.round((concluidas / tarefas.length) * 100)
     : 0;
 
+    console.log("RESULTADO DO GRÁFICO:", {
+  total: tarefas.length,
+  concluidas,
+  pendentes,
+  percentual
+});
+
   const dadosPizza = [
     { name: "Concluídas", value: concluidas },
     { name: "Pendentes", value: pendentes }
